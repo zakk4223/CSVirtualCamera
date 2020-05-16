@@ -6,9 +6,87 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		34673E8F245FAD9000E93BCF /* CSDALPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 34673E8E245FAD9000E93BCF /* CSDALPlugin.m */; };
+		34673E92245FB03F00E93BCF /* CoreMediaIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34673E91245FB03F00E93BCF /* CoreMediaIO.framework */; };
+		34673E94245FD0BD00E93BCF /* CSDALMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 34673E93245FD0BD00E93BCF /* CSDALMain.m */; };
+		34673E98246002E900E93BCF /* CSCMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34673E97246002E900E93BCF /* CSCMObject.m */; };
+		34673E9A246007A900E93BCF /* libobjc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34673E99246007A900E93BCF /* libobjc.tbd */; };
+		34673E9D24601C4000E93BCF /* CSCMDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 34673E9C24601C4000E93BCF /* CSCMDevice.m */; };
+		34673EA02460270200E93BCF /* CSCMStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 34673E9F2460270200E93BCF /* CSCMStream.m */; };
+		34673EA324622F5400E93BCF /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34673EA224622F5300E93BCF /* ServiceManagement.framework */; };
+		34A406A324630B6E00BD32BB /* CSVirtualCameraAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 34673EC62462580400E93BCF /* CSVirtualCameraAssistant.m */; };
+		34A406A424630B8800BD32BB /* CSVCTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 34673ECF2462692F00E93BCF /* CSVCTracker.m */; };
+		34A406A524630B8C00BD32BB /* CSVCDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 34673ED224626C0400E93BCF /* CSVCDevice.m */; };
+		34A406A624630B8F00BD32BB /* CSVCDalPeer.m in Sources */ = {isa = PBXBuildFile; fileRef = 34673ED524626FB600E93BCF /* CSVCDalPeer.m */; };
+		34A406B724630E5900BD32BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34673EC82462580400E93BCF /* main.m */; };
+		34A406BA24630F2F00BD32BB /* CSVirtualCameraAssistant in Resources */ = {isa = PBXBuildFile; fileRef = 34A4069C24630B6200BD32BB /* CSVirtualCameraAssistant */; };
+		34EBD5FD24634D0C0097F340 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34673ED72462756000E93BCF /* IOSurface.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		34A406B824630F2800BD32BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34673E7B245F9B0100E93BCF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34A4069B24630B6200BD32BB;
+			remoteInfo = CSVirtualCameraAssistant;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		34A4069A24630B6200BD32BB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		34EBD60F246379FD0097F340 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		34673E83245F9B0100E93BCF /* CSVirtualCamera.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSVirtualCamera.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		34673E86245F9B0100E93BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34673E8C245FA8D900E93BCF /* CSVirtualCameraUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVirtualCameraUtil.h; sourceTree = "<group>"; };
+		34673E8D245FAD9000E93BCF /* CSDALPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSDALPlugin.h; sourceTree = "<group>"; };
+		34673E8E245FAD9000E93BCF /* CSDALPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSDALPlugin.m; sourceTree = "<group>"; };
+		34673E91245FB03F00E93BCF /* CoreMediaIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMediaIO.framework; path = System/Library/Frameworks/CoreMediaIO.framework; sourceTree = SDKROOT; };
+		34673E93245FD0BD00E93BCF /* CSDALMain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSDALMain.m; sourceTree = "<group>"; };
+		34673E95245FD15200E93BCF /* CSDalMain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSDalMain.h; sourceTree = "<group>"; };
+		34673E96246002E900E93BCF /* CSCMObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSCMObject.h; sourceTree = "<group>"; };
+		34673E97246002E900E93BCF /* CSCMObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSCMObject.m; sourceTree = "<group>"; };
+		34673E99246007A900E93BCF /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = usr/lib/libobjc.tbd; sourceTree = SDKROOT; };
+		34673E9B24601C4000E93BCF /* CSCMDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSCMDevice.h; sourceTree = "<group>"; };
+		34673E9C24601C4000E93BCF /* CSCMDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSCMDevice.m; sourceTree = "<group>"; };
+		34673E9E2460270200E93BCF /* CSCMStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSCMStream.h; sourceTree = "<group>"; };
+		34673E9F2460270200E93BCF /* CSCMStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSCMStream.m; sourceTree = "<group>"; };
+		34673EA224622F5300E93BCF /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		34673EC42462580400E93BCF /* CSVirtualCameraAssistantProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVirtualCameraAssistantProtocol.h; sourceTree = "<group>"; };
+		34673EC52462580400E93BCF /* CSVirtualCameraAssistant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVirtualCameraAssistant.h; sourceTree = "<group>"; };
+		34673EC62462580400E93BCF /* CSVirtualCameraAssistant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSVirtualCameraAssistant.m; sourceTree = "<group>"; };
+		34673EC82462580400E93BCF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		34673ECE2462692F00E93BCF /* CSVCTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVCTracker.h; sourceTree = "<group>"; };
+		34673ECF2462692F00E93BCF /* CSVCTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSVCTracker.m; sourceTree = "<group>"; };
+		34673ED124626C0400E93BCF /* CSVCDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVCDevice.h; sourceTree = "<group>"; };
+		34673ED224626C0400E93BCF /* CSVCDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSVCDevice.m; sourceTree = "<group>"; };
+		34673ED424626FB600E93BCF /* CSVCDalPeer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVCDalPeer.h; sourceTree = "<group>"; };
+		34673ED524626FB600E93BCF /* CSVCDalPeer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSVCDalPeer.m; sourceTree = "<group>"; };
+		34673ED72462756000E93BCF /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
+		34673EDA2462D59100E93BCF /* CSVirtualCameraPeerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVirtualCameraPeerProtocol.h; sourceTree = "<group>"; };
+		34673EDC2462FBC700E93BCF /* CSVirtualCameraDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVirtualCameraDevice.h; sourceTree = "<group>"; };
+		34673EDD2462FBC700E93BCF /* CSVirtualCameraDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSVirtualCameraDevice.m; sourceTree = "<group>"; };
+		34A4069C24630B6200BD32BB /* CSVirtualCameraAssistant */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSVirtualCameraAssistant; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -16,6 +94,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34673EA324622F5400E93BCF /* ServiceManagement.framework in Frameworks */,
+				34673E9A246007A900E93BCF /* libobjc.tbd in Frameworks */,
+				34673E92245FB03F00E93BCF /* CoreMediaIO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A4069924630B6200BD32BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34EBD5FD24634D0C0097F340 /* IOSurface.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -25,8 +114,11 @@
 		34673E7A245F9B0100E93BCF = {
 			isa = PBXGroup;
 			children = (
+				34673EDB2462F76C00E93BCF /* SDK */,
 				34673E85245F9B0100E93BCF /* CSVirtualCamera */,
+				34673EC32462580400E93BCF /* CSVirtualCameraAssistant */,
 				34673E84245F9B0100E93BCF /* Products */,
+				34673E90245FB03F00E93BCF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -34,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				34673E83245F9B0100E93BCF /* CSVirtualCamera.plugin */,
+				34A4069C24630B6200BD32BB /* CSVirtualCameraAssistant */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -42,8 +135,57 @@
 			isa = PBXGroup;
 			children = (
 				34673E86245F9B0100E93BCF /* Info.plist */,
+				34673E8C245FA8D900E93BCF /* CSVirtualCameraUtil.h */,
+				34673E8D245FAD9000E93BCF /* CSDALPlugin.h */,
+				34673E8E245FAD9000E93BCF /* CSDALPlugin.m */,
+				34673E95245FD15200E93BCF /* CSDalMain.h */,
+				34673E93245FD0BD00E93BCF /* CSDALMain.m */,
+				34673E96246002E900E93BCF /* CSCMObject.h */,
+				34673E97246002E900E93BCF /* CSCMObject.m */,
+				34673E9B24601C4000E93BCF /* CSCMDevice.h */,
+				34673E9C24601C4000E93BCF /* CSCMDevice.m */,
+				34673E9E2460270200E93BCF /* CSCMStream.h */,
+				34673E9F2460270200E93BCF /* CSCMStream.m */,
+				34673EDA2462D59100E93BCF /* CSVirtualCameraPeerProtocol.h */,
 			);
 			path = CSVirtualCamera;
+			sourceTree = "<group>";
+		};
+		34673E90245FB03F00E93BCF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34673ED72462756000E93BCF /* IOSurface.framework */,
+				34673EA224622F5300E93BCF /* ServiceManagement.framework */,
+				34673E99246007A900E93BCF /* libobjc.tbd */,
+				34673E91245FB03F00E93BCF /* CoreMediaIO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34673EC32462580400E93BCF /* CSVirtualCameraAssistant */ = {
+			isa = PBXGroup;
+			children = (
+				34673EC42462580400E93BCF /* CSVirtualCameraAssistantProtocol.h */,
+				34673EC52462580400E93BCF /* CSVirtualCameraAssistant.h */,
+				34673EC62462580400E93BCF /* CSVirtualCameraAssistant.m */,
+				34673EC82462580400E93BCF /* main.m */,
+				34673ECE2462692F00E93BCF /* CSVCTracker.h */,
+				34673ECF2462692F00E93BCF /* CSVCTracker.m */,
+				34673ED124626C0400E93BCF /* CSVCDevice.h */,
+				34673ED224626C0400E93BCF /* CSVCDevice.m */,
+				34673ED424626FB600E93BCF /* CSVCDalPeer.h */,
+				34673ED524626FB600E93BCF /* CSVCDalPeer.m */,
+			);
+			path = CSVirtualCameraAssistant;
+			sourceTree = "<group>";
+		};
+		34673EDB2462F76C00E93BCF /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				34673EDC2462FBC700E93BCF /* CSVirtualCameraDevice.h */,
+				34673EDD2462FBC700E93BCF /* CSVirtualCameraDevice.m */,
+			);
+			path = SDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -56,15 +198,34 @@
 				34673E7F245F9B0100E93BCF /* Sources */,
 				34673E80245F9B0100E93BCF /* Frameworks */,
 				34673E81245F9B0100E93BCF /* Resources */,
+				34EBD60F246379FD0097F340 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				34A406B924630F2800BD32BB /* PBXTargetDependency */,
 			);
 			name = CSVirtualCamera;
 			productName = CSVirtualCamera;
 			productReference = 34673E83245F9B0100E93BCF /* CSVirtualCamera.plugin */;
 			productType = "com.apple.product-type.bundle";
+		};
+		34A4069B24630B6200BD32BB /* CSVirtualCameraAssistant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34A406A024630B6200BD32BB /* Build configuration list for PBXNativeTarget "CSVirtualCameraAssistant" */;
+			buildPhases = (
+				34A4069824630B6200BD32BB /* Sources */,
+				34A4069924630B6200BD32BB /* Frameworks */,
+				34A4069A24630B6200BD32BB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CSVirtualCameraAssistant;
+			productName = CSVirtualCameraAssistant;
+			productReference = 34A4069C24630B6200BD32BB /* CSVirtualCameraAssistant */;
+			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -76,6 +237,9 @@
 				ORGANIZATIONNAME = Zakk;
 				TargetAttributes = {
 					34673E82245F9B0100E93BCF = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					34A4069B24630B6200BD32BB = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
 				};
@@ -94,6 +258,7 @@
 			projectRoot = "";
 			targets = (
 				34673E82245F9B0100E93BCF /* CSVirtualCamera */,
+				34A4069B24630B6200BD32BB /* CSVirtualCameraAssistant */,
 			);
 		};
 /* End PBXProject section */
@@ -103,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A406BA24630F2F00BD32BB /* CSVirtualCameraAssistant in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,10 +279,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34673EA02460270200E93BCF /* CSCMStream.m in Sources */,
+				34673E94245FD0BD00E93BCF /* CSDALMain.m in Sources */,
+				34673E9D24601C4000E93BCF /* CSCMDevice.m in Sources */,
+				34673E98246002E900E93BCF /* CSCMObject.m in Sources */,
+				34673E8F245FAD9000E93BCF /* CSDALPlugin.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34A4069824630B6200BD32BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A406B724630E5900BD32BB /* main.m in Sources */,
+				34A406A324630B6E00BD32BB /* CSVirtualCameraAssistant.m in Sources */,
+				34A406A524630B8C00BD32BB /* CSVCDevice.m in Sources */,
+				34A406A424630B8800BD32BB /* CSVCTracker.m in Sources */,
+				34A406A624630B8F00BD32BB /* CSVCDalPeer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		34A406B924630F2800BD32BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34A4069B24630B6200BD32BB /* CSVirtualCameraAssistant */;
+			targetProxy = 34A406B824630F2800BD32BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		34673E87245F9B0100E93BCF /* Debug */ = {
@@ -231,13 +422,16 @@
 		34673E8A245F9B0100E93BCF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L3JLUY4S5E;
 				INFOPLIST_FILE = CSVirtualCamera/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = zakk.lol.CSVirtualCamera;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoasplit.vcam.dal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
 			};
@@ -246,15 +440,48 @@
 		34673E8B245F9B0100E93BCF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L3JLUY4S5E;
 				INFOPLIST_FILE = CSVirtualCamera/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = zakk.lol.CSVirtualCamera;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoasplit.vcam.dal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
+			};
+			name = Release;
+		};
+		34A406A124630B6200BD32BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L3JLUY4S5E;
+				ENABLE_HARDENED_RUNTIME = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoasplit.vcam.assistant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		34A406A224630B6200BD32BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L3JLUY4S5E;
+				ENABLE_HARDENED_RUNTIME = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoasplit.vcam.assistant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -275,6 +502,15 @@
 			buildConfigurations = (
 				34673E8A245F9B0100E93BCF /* Debug */,
 				34673E8B245F9B0100E93BCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34A406A024630B6200BD32BB /* Build configuration list for PBXNativeTarget "CSVirtualCameraAssistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34A406A124630B6200BD32BB /* Debug */,
+				34A406A224630B6200BD32BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
