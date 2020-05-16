@@ -14,7 +14,6 @@ CSDALPlugin *DALPlugin;
 
 CMIOHardwarePlugInRef CSDALPluginMain(CFAllocatorRef allocator, CFUUIDRef requestedTypeUUID)
 {
-    
     if (!CFEqual(requestedTypeUUID, kCMIOHardwarePlugInTypeID))
     {
         return NULL;

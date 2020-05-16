@@ -24,8 +24,8 @@
                                @(kCMIOStreamPropertyFormatDescriptions): @YES,
                                @(kCMIOStreamPropertyFormatDescription): @YES,
                                @(kCMIOStreamPropertyClock): @YES,
-                               @(kCMIODevicePropertyModelUID): @YES
-                               
+                               @(kCMIODevicePropertyModelUID): @YES,
+                               @(kCMIOObjectPropertyManufacturer): @YES,
         };
         
     }

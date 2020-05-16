@@ -15,7 +15,8 @@
 
 @synthesize name = _name;
 @synthesize deviceUID = _deviceUID;
-
+@synthesize manufacturer = _manufacturer;
+@synthesize modelName = _modelName;
 
 
 -(instancetype)init
@@ -101,6 +102,32 @@
         [self setPropertyUsingSelector:kCMIODevicePropertyStreams withSize:sizeof(CMIOObjectID) withData:&streamID];
     }
     return err;
+}
+
+
+-(void)setModelName:(NSString *)modelName
+{
+    _modelName = modelName;
+    CFStringRef cfString = CFBridgingRetain(modelName);
+    [self setPropertyUsingSelector:kCMIODevicePropertyModelUID withSize:sizeof(CFStringRef) withData:&cfString];
+}
+
+-(NSString *)modelName
+{
+    return _modelName;
+}
+
+
+-(void)setManufacturer:(NSString *)manufacturer
+{
+    _manufacturer = manufacturer;
+    CFStringRef cfString = CFBridgingRetain(manufacturer);
+    [self setPropertyUsingSelector:kCMIOObjectPropertyManufacturer withSize:sizeof(CFStringRef) withData:&cfString];
+}
+
+-(NSString *)manufacturer
+{
+    return _manufacturer;
 }
 
 

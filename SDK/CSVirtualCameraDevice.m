@@ -29,6 +29,7 @@
 
 -(void)setPersistOnDisconnect:(bool)persist
 {
+    
     _persistOnDisconnect = persist;
     if (_assistant)
     {

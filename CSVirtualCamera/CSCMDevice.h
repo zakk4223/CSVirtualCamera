@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong) NSString *name;
 @property (strong) NSString *deviceUID;
 @property (strong) NSString *modelName;
+@property (strong) NSString *manufacturer;
 @property (strong) CSCMStream *stream;
 
 @end
