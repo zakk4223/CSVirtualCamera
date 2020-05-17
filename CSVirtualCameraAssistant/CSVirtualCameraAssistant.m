@@ -135,7 +135,7 @@
     for(NSUUID *peerUUID in [CSVCTracker sharedTracker].currentPeers)
     {
         CSVirtualCameraAssistant *dalPeer = [CSVCTracker sharedTracker].currentPeers[peerUUID];
-        [dalPeer.xpcConnection.remoteObjectProxy setInternalClock:useClock forDevice:deviceUUID];
+        [dalPeer.xpcConnection.remoteObjectProxy useInternalClock:useClock forDevice:deviceUUID];
     }
 }
 

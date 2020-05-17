@@ -113,7 +113,10 @@
         //Clients expect to CFRelease whatever this is..
         CFTypeRef tmpRef;
         memcpy(&tmpRef, propertyData.bytes, usedSize);
-        CFRetain(tmpRef);
+        if (tmpRef)
+        {
+            CFRetain(tmpRef);
+        }
     }
     usedSize = (UInt32)propertyData.length;
     memcpy(dataPtr, propertyData.bytes, usedSize);
