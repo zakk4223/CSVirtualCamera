@@ -58,7 +58,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign) UInt32 width;
 @property (assign) UInt32 height;
 /*
- Pixel format of the frames you plan to publish. As of now there's no guard against mismatch between published frames and this setting.
+ Pixel format of the frames you plan to publish.
+ If you publish frames that don't match this pixel format, they will be converted using a VTPixelTransferSession
+ 
  This is the same type as CVPixelBuffer's pixel format. Example: kCVPixelFormatType_32BGRA
  */
 @property (assign) OSType pixelFormat;
@@ -96,9 +98,11 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)destroyDevice;
 
 /*
- Publish a CVPixelBuffer video frame. The most efficient path is to use an IOSurface backed CVPixelBuffer.
+ Publish a CVPixelBuffer video frame. The most efficient path is to use an IOSurface backed CVPixelBuffer with the same pixelFormat the camera was created with
  Non-IOSurface backed buffers will have their data copied to an IOSurface for publishing
  */
+
+
 -(void)publishCVPixelBufferFrame:(CVPixelBufferRef)videoFrame;
 /*
  If you have raw IOSurface buffers, you can use this method to publish them.
