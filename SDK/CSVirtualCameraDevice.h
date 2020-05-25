@@ -10,6 +10,8 @@
 #import <CoreVideo/CoreVideo.h>
 #import <IOSurface/IOSurfaceObjC.h>
 
+#define CSVC_DAL_PATH @"/Library/CoreMediaIO/Plug-Ins/DAL/CSVirtualCamera.plugin"
+
 NS_ASSUME_NONNULL_BEGIN
 
 
@@ -19,7 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)destroyDevice:(NSString *)uuid;
 -(void)setInternalClock:(bool)useClock forDevice:(NSString *)deviceUUID;
 -(void)setPersistOnDisconnect:(bool)persist forDevice:(NSString *)deviceUUID;
-
 @end
 
 
@@ -30,6 +31,10 @@ NS_ASSUME_NONNULL_BEGIN
     
 }
 
+/*
+ Is CSVirtualCamera installed? This just checks for the DAL plugin
+ */
++(bool)isInstalled;
 
 /*
  The camera name. This is the name that users will see in the most applications
