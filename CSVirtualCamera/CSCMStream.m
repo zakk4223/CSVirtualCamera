@@ -209,14 +209,14 @@
 -(void)setFrameRate:(float)frameRate
 {
     _frameRate = frameRate;
-    [self setPropertyUsingSelector:kCMIOStreamPropertyFrameRate withFloat64:frameRate];
+    //[self setPropertyUsingSelector:kCMIOStreamPropertyFrameRate withFloat64:frameRate];
     [self setPropertyUsingSelector:kCMIOStreamPropertyFrameRates withFloat64:frameRate];
-    [self setPropertyUsingSelector:kCMIOStreamPropertyMinimumFrameRate withFloat64:frameRate];
+   // [self setPropertyUsingSelector:kCMIOStreamPropertyMinimumFrameRate withFloat64:frameRate];
     AudioValueRange avRange;
     avRange.mMaximum = frameRate;
     avRange.mMinimum = frameRate;
     
-    [self setPropertyUsingSelector:kCMIOStreamPropertyFrameRateRanges withSize:sizeof(AudioValueRange) withData:&avRange];
+    //[self setPropertyUsingSelector:kCMIOStreamPropertyFrameRateRanges withSize:sizeof(AudioValueRange) withData:&avRange];
     
     if (_frameTimer)
     {
@@ -261,7 +261,7 @@
     timingInfo.duration = CMTimeMake(1, self.frameRate);
     timingInfo.presentationTimeStamp = CMTimeMake(mach_absolute_time(), NSEC_PER_SEC);
     timingInfo.decodeTimeStamp = kCMTimeInvalid;
-    OSStatus err = CMIOStreamClockPostTimingEvent(timingInfo.presentationTimeStamp, currentTime, true, self.streamClock);
+    OSStatus err = CMIOStreamClockPostTimingEvent(timingInfo.presentationTimeStamp, currentTime, false, self.streamClock);
     if (err != noErr)
     {
         return;

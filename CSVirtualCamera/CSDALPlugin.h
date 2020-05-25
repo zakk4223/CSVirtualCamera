@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property (assign) CMIOHardwarePlugInRef pluginRef;
+@property (assign) CMIOObjectID pluginObjectID;
 
 -(CSCMObject *)getObject:(CMIOObjectID)forID;
 -(void)addObject:(CSCMObject *)cmObject;

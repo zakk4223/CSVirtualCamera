@@ -53,9 +53,12 @@ OSStatus InitializeWithObjectID(CMIOHardwarePlugInRef self, CMIOObjectID objectI
     CSCMObject *pluginObj = [[CSCMObject alloc] init];
     pluginObj.objectID = objectID;
     [DALPlugin addObject:pluginObj];
+    DALPlugin.pluginObjectID = objectID;
     
     //OSStatus err = [DALPlugin createVirtualDevice:@"CocoaSplit Virtual Camera" withFormatType:kCVPixelFormatType_32BGRA usingUID:@"CS VIDEO UID" width:1920 height:1080 framerate:60.0f];
  
+    
+    debugLog(@"INIT PLUGIN WITH OBJECT ID %d", objectID);
     return noErr;
 }
 
@@ -89,12 +92,14 @@ Boolean ObjectHasProperty(CMIOHardwarePlugInRef self, CMIOObjectID objectID, con
     {
         return false;
     }
-    
     if ([pluginObj hasProperty:address])
     {
         return true;
     }
-    
+    if (address->mSelector == kCMIOObjectPropertyOwnedObjects)
+    {
+        return true;
+    }
     return false;
 }
 
@@ -108,9 +113,15 @@ OSStatus ObjectGetPropertyDataSize(CMIOHardwarePlugInRef self, CMIOObjectID obje
     }
     
     UInt32 propSize = [pluginObj getPropertyDataSize:address];
+    
+
+
     *dataSize = propSize;
     
-    
+    if (!propSize)
+    {
+        return kCMIOHardwareBadPropertySizeError;
+    }
     return noErr;
 }
 
@@ -138,7 +149,9 @@ OSStatus ObjectGetPropertyData(CMIOHardwarePlugInRef self, CMIOObjectID objectID
 
 OSStatus ObjectSetPropertyData(CMIOHardwarePlugInRef self, CMIOObjectID objectID, const CMIOObjectPropertyAddress *address, UInt32 qualifierDataSize, const void *qualifierData, UInt32 dataSize, const void *data)
 {
+    
     CSCMObject *pluginObj = [DALPlugin getObject:objectID];
+
     if (!pluginObj)
     {
         return kCMIOHardwareBadObjectError;
@@ -269,10 +282,9 @@ OSStatus StreamCopyBufferQueue(CMIOHardwarePlugInRef               self,
     }
     
     
-    
     streamObj.queueAlteredProc = queueAlteredProc;
     streamObj.queueAltertedRefCon = queueAlteredRefCon;
-    //The client expect to be able to release this when done, so retain it here
+    //The client expects to be able to release this when done, so retain it here
     if (streamObj.streamQueue)
     {
         CFRetain(streamObj.streamQueue);
@@ -291,7 +303,6 @@ OSStatus StreamCopyBufferQueue(CMIOHardwarePlugInRef               self,
         _objects = [NSMutableDictionary dictionary];
         _devices = [NSMutableDictionary dictionary];
         [self createPluginInterface];
-        debugLog(@"CONNECTING TO ASSISTANT");
         [self connectToAssistant];
     }
     return self;
@@ -359,8 +370,11 @@ OSStatus StreamCopyBufferQueue(CMIOHardwarePlugInRef               self,
 -(void)createDevice:(NSString *)name withUID:(NSString *)uid withModel:(NSString *)modelName withManufacturer:(NSString *)manufacturer width:(NSUInteger)width height:(NSUInteger)height pixelFormat:(OSType)pixelFormat frameRate:(float) frameRate;
 {
     
+    debugLog(@"CREATING DEVICE %@ WITH UID %@ MODEL %@ MANUF %@ width %d height %d pixelFormat %@ framerate %f", name, uid, modelName, manufacturer, width, height, NSFileTypeForHFSTypeCode(pixelFormat), frameRate);
+    
     CMVideoFormatDescriptionRef videoFormat = NULL;
     NSDictionary *extDict = @{(id)kCMFormatDescriptionExtension_FormatName: NSFileTypeForHFSTypeCode(pixelFormat)};
+    
     
     CMVideoFormatDescriptionCreate(NULL, pixelFormat, width, height, (__bridge CFDictionaryRef _Nullable)(extDict), &videoFormat);
     
@@ -381,7 +395,8 @@ OSStatus StreamCopyBufferQueue(CMIOHardwarePlugInRef               self,
         newDev.deviceUID = uid;
         newDev.modelName = modelName;
         [newDev createObjectUsingPlugin:self.pluginRef];
-        
+    
+        [newDev setPropertyUsingSelector:kCMIODevicePropertyPlugIn withUInt32:self.pluginObjectID];
         [newDev publishObject:self.pluginRef];
         _devices[newDev.deviceUID] = newDev;
     }
@@ -445,20 +460,7 @@ OSStatus StreamCopyBufferQueue(CMIOHardwarePlugInRef               self,
     _myListener = [NSXPCListener anonymousListener];
     _myListener.delegate = self;
     [_myListener resume];
-    /*
-    NSXPCConnection *brokerInterface = [NSXPCInterface interfaceWithProtocol:@protocol(CSVirtualCameraBrokerProtocol)];
-    NSXPCConnection *brokerConnection = [[NSXPCConnection alloc] initWithServiceName:@"zakk.lol.CSVirtualCamera.CSVirtualCameraBroker"];
-    
-    brokerConnection.remoteObjectInterface = brokerInterface;
-    [brokerConnection resume];
-    id<CSVirtualCameraBrokerProtocol> brokerObj = [brokerConnection synchronousRemoteObjectProxyWithErrorHandler:^(NSError * _Nonnull error) {
-        debugLog(@"ERROR CONNECTING TO BROKER %@", error);
-    }];
-    
-    NSLog(@"BROKER CONNECTION %@ %@", brokerConnection, brokerObj);
-    
-    [brokerObj getAssistantEndpoint:^(NSXPCListenerEndpoint *endpoint) {
-      */
+
         NSXPCInterface *assistantInterface = [NSXPCInterface interfaceWithProtocol:@protocol(CSVirtualCameraAssistantProtocol)];
         NSXPCConnection *connection = [[NSXPCConnection alloc] initWithMachServiceName:@"com.cocoasplit.vcam.assistant" options:0];
         

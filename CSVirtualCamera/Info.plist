@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>11.5</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -23,7 +23,7 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>11.5</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>CFPlugInFactories</key>
 	<dict>
 		<key>3675C20F-0269-4425-9F5D-E6C6C6CF4A3B</key>

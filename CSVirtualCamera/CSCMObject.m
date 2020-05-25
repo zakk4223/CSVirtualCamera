@@ -96,7 +96,9 @@
 -(UInt32)getPropertyUsingSelector:(CMIOObjectPropertySelector)usingSelector withSize:(UInt32)size withPtr:(void *)dataPtr
 {
     UInt32 usedSize = 0;
+
     NSData *propertyData = _propertyMap[@(usingSelector)];
+    
     if (!propertyData)
     {
         return usedSize;
