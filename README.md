@@ -52,10 +52,12 @@ As of macOS 10.15.4:
 #### Verified working:
 -  Chrome
 -  Microsoft Teams
+-  OBS
 
 #### Verified NOT WORKING:
 - Discord (blocked by library validation)
-- Zoom 5.0.3 (blocked by library validation). 5.0.4 release notes claim this will work, will update this doc
+- Zoom 5.0.4. Zoom 'fixed' third party DAL plugins by using an explict allow list for code signature TEAM ids. Sigh.
+
 
 
 ## Note to application developers
