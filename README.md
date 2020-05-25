@@ -38,24 +38,24 @@ As of macOS 10.15.4:
 ### Apple apps:
 
 #### Verified working:
-  QuickTime Player (has the com.apple.security.cs.disable-library-validation entitlement)
+- QuickTime Player (has the com.apple.security.cs.disable-library-validation entitlement)
 
 
 #### Verified NOT WORKING:
-  Photo Booth (blocked by library validation)
-  Facetime (blocked by library validation)
-  Safari (blocked by library validation)
+- Photo Booth (blocked by library validation)
+- Facetime (blocked by library validation)
+- Safari (blocked by library validation)
 
 
 ### Third party apps:
 
 #### Verified working:
-  Chrome
-  Microsoft Teams
+-  Chrome
+-  Microsoft Teams
 
 #### Verified NOT WORKING:
-  Discord (blocked by library validation)
-  Zoom 5.0.3 (blocked by library validation). 5.0.4 release notes claim this will work, will update this doc
+- Discord (blocked by library validation)
+- Zoom 5.0.3 (blocked by library validation). 5.0.4 release notes claim this will work, will update this doc
 
 
 ## Note to application developers
@@ -79,12 +79,3 @@ provide instructions on how to do so. You may also be able to 'unsign' apps and 
 
 ## Note to Apple
 Please fix this. With more and more applications adopting library validation users are losing access to not only virtual cameras but legitimate hardware devices. Not everything is a UVC camera...
-
-  
-  
-
-
-   
-
-
-
